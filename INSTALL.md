@@ -1,5 +1,7 @@
 # Teardown
 
+## NOTE: This is specific to the Trinket, but applies more or less to the Exen Mini install.
+
 I am not going to detail the full teardown of the Nintendo Switch as you can
 find videos and pictures online, but the gist of it goes like this:
 

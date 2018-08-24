@@ -1,19 +1,11 @@
 #include <Arduino.h>
 #include <Usb.h>
-#include <Adafruit_DotStar.h>
 
-#define WAKEUP_PIN 4               // Solder to side of cap on guide
-                                   // -= NOTE: THIS MUST BE PIN 4!!! =-
-#define RCM_STRAP_PIN 3            // Solder to pin 10 on joycon rail
-#define RCM_STRAP_TIME_us 1000000  // Amount of time to hold RCM_STRAP low and then launch payload
-#define VOLUP_PIN 0
-#define ONBOARD_LED 13
-#define LED_CONFIRM_TIME_us 500000 // How long to show red or green light for success or fail
+#define ONBOARD_LED 8
+#define LED_CONFIRM_TIME 50
 
-// Contains fuseeBin and FUSEE_BIN_LENGTH
-// Include only one payload here
-// Use tools/binConverter.py to convert any payload bin you wish to load
-#include "hekate_ctcaer_3.0.h"
+// Use tools/binConverter.py to convert payload bin
+#include "hekate_ctcaer_4.0.h"
 
 #define INTERMEZZO_SIZE 92
 const byte intermezzo[INTERMEZZO_SIZE] =
@@ -61,11 +53,10 @@ void serialPrintHex(const byte *data, byte length)
   DEBUG_PRINTLN();
 }
 
-Adafruit_DotStar strip = Adafruit_DotStar(1, INTERNAL_DS_DATA, INTERNAL_DS_CLK, DOTSTAR_BGR);
-
 // From what I can tell, usb.outTransfer is completely broken for transfers larger than 64 bytes (even if maxPktSize is
 // adjusted for that endpoint). This is a minimal and simplified reimplementation specific to our use cases that fixes
 // that bug and is based on the code of USBHost::outTransfer, USBHost::SetPipeAddress and USBHost::OutTransfer.
+    // This is likely due to the host controller being USB2.
 void usbOutTransferChunk(uint32_t addr, uint32_t ep, uint32_t nbytes, uint8_t* data)
 {
 
@@ -93,7 +84,6 @@ void usbOutTransferChunk(uint32_t addr, uint32_t ep, uint32_t nbytes, uint8_t* d
     }
     else
     {
-      strip.setPixelColor(0, 64, 0, 0); strip.show();
       DEBUG_PRINTLN("Error in OUT transfer");
       return;
     }
@@ -204,18 +194,16 @@ void setupTegraDevice()
 
 void sleep(int errorCode) {
   // Turn off all LEDs and go to sleep. To launch another payload, press the reset button on the device.
-  //delay(100);
-  digitalWrite(PIN_LED_RXL, HIGH);
-  digitalWrite(PIN_LED_TXL, HIGH);
+  // PIN_LED_RXL and PIN_LED_TXL calls are unnecessary and likely need to be pruned out
+  digitalWrite(PIN_LED_RXL, LOW);
+  digitalWrite(PIN_LED_TXL, LOW);
   digitalWrite(ONBOARD_LED, LOW);
+  // SAMD21 device failed, power down LED
+  // This `if` is unnecessary and needs to be pruned out
   if (errorCode == 1) {
-    setLedColor("green"); //led to red
-    delayMicroseconds(LED_CONFIRM_TIME_us);
-    setLedColor("black"); //led to off
+    setLedColor("black"); 
   } else {
-    setLedColor("red"); //led to red
-    delayMicroseconds(LED_CONFIRM_TIME_us);
-    setLedColor("black"); //led to off
+    setLedColor("black"); 
   }
   
   SCB->SCR |= SCB_SCR_SLEEPDEEP_Msk; /* Enable deepsleep */
@@ -232,51 +220,19 @@ void sleep(int errorCode) {
 }
 
 void setLedColor(const char color[]) {
-  if (color == "red") {
-    strip.setPixelColor(0, 64, 0, 0);
-  } else if (color == "green") {
-    strip.setPixelColor(0, 0, 64, 0);
-  } else if (color == "orange") {
-    strip.setPixelColor(0, 64, 32, 0);
-  } else if (color == "blue") {
-    strip.setPixelColor(0, 0, 0, 64);
+  if (color == "blue") {
+    digitalWrite(ONBOARD_LED, HIGH);
   } else if (color == "black") {
-    strip.setPixelColor(0, 0, 0, 0);
+    digitalWrite(ONBOARD_LED, LOW);
   } else {
-    strip.setPixelColor(0, 255, 255, 255);
+    digitalWrite(ONBOARD_LED, LOW);
   }
-  strip.show();
-}
-
-void wakeup(){
-  // First, we set the RCM_STRAP low
-  pinMode(RCM_STRAP_PIN, OUTPUT);
-  pinMode(VOLUP_PIN, OUTPUT);
-  digitalWrite(RCM_STRAP_PIN, LOW);
-  digitalWrite(VOLUP_PIN, LOW);
-  setLedColor("blue");
-  // Wait a second (I tried to reduce this but 1 second is good)
-  delayMicroseconds(RCM_STRAP_TIME_us);
-  SCB->AIRCR = ((0x5FA << SCB_AIRCR_VECTKEY_Pos) | SCB_AIRCR_SYSRESETREQ_Msk); //full software reset
 }
 
 void setup()
 {
-  // This continues after the reset after a wakeup
-  // Set RCM_STRAP as an input to "stealth" any funny business on the RCM_STRAP
-  pinMode(RCM_STRAP_PIN, INPUT);
-  pinMode(VOLUP_PIN, INPUT);
-  pinMode(WAKEUP_PIN, INPUT);
-
-  // Before sleeping, make sure that we can wake up again when the switch turns on
-  // by attaching an interrupt to the wakeup pin
-  attachInterrupt(WAKEUP_PIN, wakeup, RISING);
-  // Allow pin 4 to trigger wakeups. I'm not sure how to generalize this so that's
-  // why pin 4 must be the wakeup pin.
-  EIC->WAKEUP.vec.WAKEUPEN |= (1<<6);
-
-  strip.begin();
-
+  pinMode(ONBOARD_LED, OUTPUT); // exen
+ 
   int usbInitialized = usb.Init();
 #ifdef DEBUG
   Serial.begin(115200);
@@ -286,7 +242,10 @@ void setup()
   if (usbInitialized == -1) sleep(-1);
 
   DEBUG_PRINTLN("Ready! Waiting for Tegra...");
-  bool blink = true;
+  // Blink once to notify user SAMD21 device is ready
+        setLedColor("blue");
+        delay(LED_CONFIRM_TIME);
+        setLedColor("black"); 
   int currentTime = 0;
   while (!foundTegra)
   {
@@ -295,21 +254,23 @@ void setup()
 
     if (currentTime > lastCheckTime + 100) {
       usb.ForEachUsbDevice(&findTegraDevice);
-      if (blink && !foundTegra) {
-        setLedColor("orange"); //led to orange
-      } else {
-        setLedColor("black"); //led to black
-      }
-      blink = !blink;
       lastCheckTime = currentTime;
     }
     if (currentTime > 1500) {
-      sleep(-1);
+        // Time has run out, notify user SAMD21 device did not find RCM-ready endpoint
+        setLedColor("blue");
+        delay(LED_CONFIRM_TIME);
+        setLedColor("black"); 
+        delay(LED_CONFIRM_TIME);
+        setLedColor("blue");
+        delay(LED_CONFIRM_TIME);
+        setLedColor("black"); 
+        sleep(-1);
     }
 
   }
 
-  DEBUG_PRINTLN("Found Tegra!");
+  DEBUG_PRINTLN("Found Tegra!");        
   setupTegraDevice();
 
   byte deviceID[16] = {0};
