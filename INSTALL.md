@@ -30,7 +30,7 @@ board that might make it more difficult to remove.
 
 ## Muting the power LED light
 
-Remove the power LED. This is to the left of microusb port. This is a waste of power if you
+Remove the power LED. This is to the left of reset button (usb port down), next to the 5V/3V pins. This is a waste of power if you
 leave this on.
 
 ## Remove reset switch (Optional, reduce height)
