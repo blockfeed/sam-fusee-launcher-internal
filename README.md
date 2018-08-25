@@ -2,7 +2,7 @@
 
 # sam-fusee-launcher-internal
 
-Fusee Launcher for the very tiny [Nerdonic Exen Mini](https://nerdonic.com/products/exen/mini) board.
+This is an implementation of the Fusée Gelée launcher for the very tiny [Nerdonic Exen Mini](https://nerdonic.com/products/exen/mini) board.
 
 Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher) by atlas44 and the [fork by noemu](https://github.com/noemu/sam-fusee-launcher), as well as the [Quantum-cross fork](https://github.com/Quantum-cross/sam-fusee-launcher-internal).
 
@@ -22,7 +22,8 @@ exact position where the reset button sits under the back case.
 The system needs to be booted into Horizon, or powered by an external 3V or 5V supply in order to enable bootloader mode.
 
 [CTCaer's fork of Hekate](https://github.com/CTCaer/hekate) supports chainloading,
-so bootloader mode should not be needed after initial install.
+so bootloader mode should not be needed after initial install. It is included as
+the default payload in this package.
 
 **This installation is NOT for the faint of heart. It requires soldering to one
 end of an extremely small capacitor.**
