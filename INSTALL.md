@@ -85,8 +85,8 @@ just by pushing the back. Use your imagination.
 
 You can also drill a hole in the back case at the exact point where the reset button sits.
 
-Note that once a proper open source payload chainloader payload is created, the
-Exen Mini should *theoretically not have to be flashed anymore*.
+Hekate 4.0 (included) now supporting chainloading and autoboot, so updating the device via bootloader mode
+should no longer be required.
 
 # Reassemble switch
 

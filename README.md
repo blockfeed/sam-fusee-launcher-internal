@@ -12,12 +12,14 @@ I created this fork to create an **internal** Nerdonic Exen Mini mod. It detects
 RCM mode it will upload a payload, blink the LED once and go to sleep. If it cannot find RCM mode
 it will also simply blink twice and then go to sleep.
 
+This code can be used for an external "dongle" as well. Simply program the device and [attach a 3V 2032 battery + power toggle](https://www.adafruit.com/product/1871).
+
 If you expose a reset wire outside the switch or put a magnetic or physical
 button on the switch you can put the Exen Mini into bootloader mode and flash a
 new payload without opening it again. You can also drill a small hole at the
 exact position where the reset button sits under the back case.
 
-The system needs to be booted into HOS or powered by an external 5V supply in order to enable bootloader mode.
+The system needs to be booted into Horizon, or powered by an external 3V or 5V supply in order to enable bootloader mode.
 
 [CTCaer's fork of Hekate](https://github.com/CTCaer/hekate) supports chainloading,
 so bootloader mode should not be needed after initial install.
@@ -120,4 +122,5 @@ off of
 * [xboxexport](https://www.youtube.com/user/xboxexpert) for testing the mod,
   helping with the install instructions, pictures, and the idea for grabbing
 RCM_STRAP at the rail.
+* [Quantum-cross](https://github.com/Quantum-cross) for his work
 
