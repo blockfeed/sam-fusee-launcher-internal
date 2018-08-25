@@ -2,7 +2,9 @@
 
 # sam-fusee-launcher-internal
 
-Fusee Launcher for the Nerdonics Exen Mini board. Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher) by atlas44 and the [fork by noemu](https://github.com/noemu/sam-fusee-launcher), as well as the Quantum-cross fork (https://github.com/Quantum-cross/sam-fusee-launcher-internal).
+Fusee Launcher for the very tiny [Nerdonics Exen Mini](https://nerdonic.com/products/exen/mini) board.
+
+Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher) by atlas44 and the [fork by noemu](https://github.com/noemu/sam-fusee-launcher), as well as the [Quantum-cross fork](https://github.com/Quantum-cross/sam-fusee-launcher-internal).
 
 Build and tested with Arduino SDK.
 
@@ -17,13 +19,13 @@ exact position where the reset button sits under the back case.
 
 The system needs to be booted into HOS or powered by an external 5V supply in order to enable bootloader mode.
 
-CTCaer's fork of hekate (https://github.com/CTCaer/hekate) supports chainloading,
+[CTCaer's fork of Hekate](https://github.com/CTCaer/hekate) supports chainloading,
 so bootloader mode should not be needed after initial install.
 
 **This installation is NOT for the faint of heart. It requires soldering to one
 end of an extremely small capacitor.**
 
-* AutoRCM is recommended (https://switchtools.sshnuke.net/)
+* AutoRCM (aka "briccmii") is recommended (https://switchtools.sshnuke.net/)
 
 **Additionally, this is all experimental, there are some issues (see below).**
 
