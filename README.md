@@ -2,13 +2,13 @@
 
 # sam-fusee-launcher-internal
 
-Fusee Launcher for the very tiny [Nerdonics Exen Mini](https://nerdonic.com/products/exen/mini) board.
+Fusee Launcher for the very tiny [Nerdonic Exen Mini](https://nerdonic.com/products/exen/mini) board.
 
 Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher) by atlas44 and the [fork by noemu](https://github.com/noemu/sam-fusee-launcher), as well as the [Quantum-cross fork](https://github.com/Quantum-cross/sam-fusee-launcher-internal).
 
 Build and tested with Arduino SDK.
 
-I created this fork to create an **internal** Nerdonics Exen Mini mod. It detects
+I created this fork to create an **internal** Nerdonic Exen Mini mod. It detects
 RCM mode it will upload a payload, blink the LED once and go to sleep. If it cannot find RCM mode
 it will also simply blink twice and then go to sleep.
 
@@ -43,13 +43,13 @@ Summary:
 * Download and install arduino IDE http://www.arduino.cc/en/Main/Software
 * go to "Tools > Board > Board Manager" and select Type: All and
 * Install "Arduino - Boards SAMD"
-* Select the Nerdonics Exen Mini with "Tools > Board > Arduino/Genuino Zero (Native USB Port)’"
+* Select the Nerdonic Exen Mini with "Tools > Board > Arduino/Genuino Zero (Native USB Port)’"
 * Go to Sketch > Include Library > Manage Libraries
 * Install USBHost
 
 You will need to power the Exen Mini with a separate 5V or 3.3V power supply during first-time programming (the device has pins for either). A cut off USB cable works well and can be connected to the power input and ground of the Exen Mini. Power the device and the red LED should come on. Then double-click the reset button on the Exen Mini.
 
-Connect the Nerdonics Exen Mini to your computer via the micro USB port -- Windows device manager should detect the device and assign it a COM port.
+Connect the Nerdonic Exen Mini to your computer via the micro USB port -- Windows device manager should detect the device and assign it a COM port.
 
 Got to Tools > Port and select your connected Exen Mini
 
