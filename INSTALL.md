@@ -62,12 +62,12 @@ it with the adjacent capacitor.
 
 # Test the mod
 
-Feel free to connect the battery and test the mod. If you installed the
-`RCM_STRAP`, then you just need to hold Vol+ and press power. Otherwise use
-your joycon or jig to pull enable RCM. The Exen Mini should wake itself up and
-inject the payload.
+Feel free to connect the battery and test the mod. Use your joycon or jig to enable RCM. 
+The Exen Mini should wake itself up and inject the payload.
 
-AutoRCM will boot directly with no user intervention. Press Vol- to jump to the Hekate menu.
+The Exen Mini will blink once when it powers on. It will blink twice after that if no RCM device is detected (failure).
+
+AutoRCM users will boot directly with no user intervention. Press Vol- to jump to the Hekate menu.
 
 See Status Lights and Troubleshooting sections below if you are having issues.
 
