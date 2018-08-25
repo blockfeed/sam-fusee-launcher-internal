@@ -51,6 +51,7 @@ from the Switch.
 Refer to the following picture for recommended placement of the Exen Mini.
 
 ![Exen Mini installation image](images/trinket-install-points.jpg)
+![Exen Mini chip points](images/Exen_points.jpg)
 
 Insulate and affix the Exen Mini to the metal shield or cut the metal shield with regular scissors. 
 I used some Kapton tape to insulate and put a couple dabs of hot glue in the corners. xboxexpert used some
