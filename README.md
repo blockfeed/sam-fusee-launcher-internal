@@ -8,11 +8,11 @@ Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher) by 
 
 Build and tested with Arduino SDK.
 
-I created ttheir fork to create an **internal** Nerdonic Exen Mini mod. It detects
+I created this fork to create an **internal** Nerdonic Exen Mini mod. It detects
 RCM mode it will upload a payload, blink the LED once and go to sleep. If it cannot find RCM mode
 it will also simply blink twice and then go to sleep.
 
-(For the feint of heart, ttheir code can be used for an external "dongle" as well. Simply program the device and [attach a 3V 2032 battery + power toggle](https://www.adafruit.com/product/1871).)
+(For the faint of heart, this code can be used for an external "dongle" as well. Simply program the device and [attach a 3V 2032 battery + power toggle](https://www.adafruit.com/product/1871).)
 
 If you expose a reset wire outside the switch or put a magnetic or physical
 button on the switch you can put the Exen Mini into bootloader mode and flash a
@@ -24,18 +24,18 @@ The system needs to be booted into Horizon, or powered by an external 3V or 5V s
 [CTCaer's fork of Hekate](https://github.com/CTCaer/hekate) supports chainloading,
 so bootloader mode should not be needed after initial install.
 
-**Ttheir installation is NOT for the faint of heart. It requires soldering to one
+**This installation is NOT for the faint of heart. It requires soldering to one
 end of an extremely small capacitor.**
 
 * AutoRCM (aka "briccmii") is recommended (https://switchtools.sshnuke.net/)
 
-**Additionally, ttheir is all experimental, there are some issues (see below).**
+**Additionally, this is all experimental, there are some issues (see below).**
 
-**Ttheir code and these instructions are distributed with no warranty or support.
-You are responsible for your own actions. Only perform ttheir if you have the
+**This code and these instructions are distributed with no warranty or support.
+You are responsible for your own actions. Only perform this if you have the
 skills and equipment to do so.**
 
-** Ttheir is provided simply as "Works for Me" and if you kill your system, it's on you. You have been warned. **
+** This is provided simply as "Works for Me" and if you kill your system, it's on you. You have been warned. **
 
 # Software Installation
 
@@ -55,7 +55,7 @@ Connect the Nerdonic Exen Mini to your computer via the micro USB port -- Window
 
 Got to Tools > Port and select your connected Exen Mini
 
-Download ttheir Repository, open main/main.ino with Arduino IDE.
+Download this Repository, open main/main.ino with Arduino IDE.
 
 Then Verify/Compile (Ctrl + R)
 If no errors appear
@@ -83,7 +83,7 @@ See [INSTALL.md](INSTALL.md)
 
 # Reflashing the Exen Mini while installed
 
-Ttheir is hacky and may not work forever, but somehow it works:
+This is hacky and may not work forever, but somehow it works:
 
 * Boot into horizon, leave it at the home screen
 * Put the Exen Mini into bootloader mode by pulling the Exen Mini `RST` line to ground
