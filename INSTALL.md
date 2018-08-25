@@ -100,7 +100,7 @@ This is the order of what happens when you turn the switch on:
 
 1. Switch turned on
 2. Exen Mini woken up, LED blinks once. The switch should boot into your payload.
-3. RCM not found? Blinks twice.
+3. RCM not found? Blinks twice after the initial "poweron" blink.
 4. Exen Mini goes to sleep and waits for the Switch to turn on again
 
 # Troubleshooting
