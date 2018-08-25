@@ -101,7 +101,7 @@ IMPORTANT: To be safe, always power your system down via the Hekate menu (click 
 
 # Install Picture
 
-![installation](images/trinket-install-points.jpg)
+![installation](images/blockfeed-install.jpg)
 
 # Thanks!
 
