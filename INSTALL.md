@@ -38,8 +38,8 @@ leave this on.
 If you want to be able to put the metal shield back on the switch, you will
 need to remove the reset switch. If you keep the metal shield off you can
 actually press the reset switch through the rear plastic case. This is only
-useful to get into bootloader mode, which should be obsolete once a proper
-chainloader is released.
+useful to get into bootloader mode. This should not be needed now that Hekate
+supports chainloading.
 
 # Installing the Exen Mini
 
@@ -49,13 +49,12 @@ Now it is time to install the Exen Mini. Make sure the battery is **unplugged**
 from the Switch.
 
 Refer to the following picture for recommended placement of the Exen Mini.
-**An alternate point for Exen Mini pad 4 is detailed one section below.**
 
 ![Exen Mini installation image](images/trinket-install-points.jpg)
 
-Insulate and affix the Exen Mini to the metal shield. I used some Kapton tape to
-insulate and put a couple dabs of hot glue in the corners. xboxexpert used some
-double sided tape to affix his mod (pictured).
+Insulate and affix the Exen Mini to the metal shield or cut the metal shield with regular scissors. 
+I used some Kapton tape to insulate and put a couple dabs of hot glue in the corners. xboxexpert used some
+double sided tape to affix his mod.
 
 Carefully wire up the Exen Mini as shown in the picture using some thin wire. Be
 very careful with the point on the capacitor, and be very careful not to bridge
