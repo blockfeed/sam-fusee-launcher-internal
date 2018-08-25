@@ -99,7 +99,11 @@ catches fire and burns your house down it's not my fault**
 
 IMPORTANT: To be safe, always power your system down via the Hekate menu (click the Vol- button during initial boot).
 
-# Install Picture
+# Install pin points
+
+![solder points](images/trinket-install-points.jpg)
+
+# Install Picture 
 
 ![installation](images/blockfeed-install.jpg)
 
