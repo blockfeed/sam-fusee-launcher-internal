@@ -35,11 +35,11 @@ end of an extremely small capacitor.**
 
 **Additionally, this is all experimental, there are some issues (see below).**
 
-**This code and these instructions are distributed with no warranty or support.
+## This code and these instructions are distributed with no warranty or support.
 You are responsible for your own actions. Only perform this if you have the
-skills and equipment to do so.**
+skills and equipment to do so.
 
-** This is provided simply as "Works for Me" and if you kill your system, it's on you. You have been warned. **
+## This is provided simply as "Works for Me" and if you kill your system, it's on you. You have been warned.
 
 # Software Installation
 
