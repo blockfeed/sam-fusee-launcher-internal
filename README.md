@@ -14,6 +14,8 @@ it will also simply blink twice and then go to sleep.
 
 (For the faint of heart, this code can be used for an external "dongle" as well. Simply program the device and [attach a 3V 2032 battery + power toggle](https://www.adafruit.com/product/1871).)
 
+![external install](images/external_install.jpg)
+
 If you expose a reset wire outside the switch or put a magnetic or physical
 button on the switch you can put the Exen Mini into bootloader mode and flash a
 new payload without opening it again. You can also drill a small hole at the
