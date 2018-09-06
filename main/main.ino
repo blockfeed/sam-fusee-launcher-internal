@@ -232,7 +232,7 @@ void setLedColor(const char color[]) {
 void setup()
 {
   pinMode(ONBOARD_LED, OUTPUT); // exen
- 
+
   int usbInitialized = usb.Init();
 #ifdef DEBUG
   Serial.begin(115200);

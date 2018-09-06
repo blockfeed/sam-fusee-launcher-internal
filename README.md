@@ -115,14 +115,11 @@ IMPORTANT: To be safe, always power your system down via the Hekate menu (click 
 # Thanks!
 
 * [atlas44](https://github.com/atlas44/sam-fusee-launcher) for the original
-  implementation, help with my install, and being someone I can bounce ideas
-off of
+  implementation
 * [CTCaer](https://github.com/CTCaer/hekate) for their work on hekate
 * [Rajkosto](https://github.com/rajkosto) for their amazing work, and for [RajNX](https://switchtools.sshnuke.net/)
 * [noemu](https://github.com/noemu/sam-fusee-launcher) for their
   iteration/cleanup of atlas44's code.
-* [xboxexport](https://www.youtube.com/user/xboxexpert) for testing the mod,
-  helping with the install instructions, pictures, and the idea for grabbing
-RCM_STRAP at the rail.
+* [xboxexport](https://www.youtube.com/user/xboxexpert) for their work
 * [Quantum-cross](https://github.com/Quantum-cross) for their work
 
