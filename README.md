@@ -25,6 +25,9 @@ The system needs to be booted into Horizon, or powered by an external 3V or 5V s
 so bootloader mode should not be needed after initial install. It is included as
 the default payload in this package.
 
+If you have a newer payload, you should be able to copy it to your SD card as /bootloader/update.bin, [per the Hekate
+documentation](https://github.com/CTCaer/hekate/blob/master/README.md). 
+
 **This installation is NOT for the faint of heart. It requires soldering to one
 end of an extremely small capacitor.**
 
@@ -77,6 +80,14 @@ Run the python script `tools/binConverter.py` with the path to the file as an ar
 In the same folder as the .bin file is located, a new .h file should appear. Copy the new file to the main folder and in the main.ino go to line 6 `#include "hekate_ctcaer_4.0.h"` and rename it to your new file `#include "hekateNew.h"`
 
 Then just compile and upload.
+
+# Alternative bootloader ("Can I use UF2 files?")
+
+This device can be flashed with the [adafruit uf2-samdx1 bootloader](https://github.com/adafruit/uf2-samdx1) (so it operates like a trinket m0, effectively).
+
+You will need to program the bootloader with OpenOCD via SWD (or your programmer of choice), outside the scope of this project.
+
+This is not really required, since Hekate 4 supports chainloading.
 
 # Installation into the Nintendo Switch
 
