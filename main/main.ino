@@ -5,6 +5,20 @@
 #define LED_CONFIRM_TIME 50
 
 // Open hekate bin with HxD, go to "export" and export it as "c" then rename to .h
+// Note the header, it will be something along the lines of:
+// unsigned char rawData[123087] = {
+//
+// 
+// The header of the new file will need to be replaced with the following:
+//
+// #include <Arduino.h> 
+// #define FUSEE_BIN_SIZE 123087
+// const PROGMEM byte fuseeBin[FUSEE_BIN_SIZE] = {
+//
+// Update FUSEE_BIN_SIZE to whatever the reported size is for the C file.
+//
+// For 4.2, this size is 123087.
+
 #include "hekate_ctcaer_4.2.h"
 
 #define INTERMEZZO_SIZE 92
