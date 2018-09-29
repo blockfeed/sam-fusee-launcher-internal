@@ -4,7 +4,7 @@
 #define ONBOARD_LED 8
 #define LED_CONFIRM_TIME 50
 
-// Use tools/binConverter.py to convert payload bin
+// Open hekate bin with HxD, go to "export" and export it as "c" then rename to .h
 #include "hekate_ctcaer_4.0.h"
 
 #define INTERMEZZO_SIZE 92
