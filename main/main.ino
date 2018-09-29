@@ -5,7 +5,7 @@
 #define LED_CONFIRM_TIME 50
 
 // Open hekate bin with HxD, go to "export" and export it as "c" then rename to .h
-#include "hekate_ctcaer_4.0.h"
+#include "hekate_ctcaer_4.2.h"
 
 #define INTERMEZZO_SIZE 92
 const byte intermezzo[INTERMEZZO_SIZE] =
