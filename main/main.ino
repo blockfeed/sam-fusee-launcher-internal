@@ -18,10 +18,11 @@
 // Update FUSEE_BIN_SIZE to whatever the reported size is for the C file.
 //
 // For 4.2, this size is 123087.
+// For 4.5, this size is 125363.
 
 // #include "rajnx_ipl-0.7.5.1.h"
-// #include "hekate_ctcaer_4.2.h"
-#include "atmo-0.8.1-master-bd76e73--fusee-primary.h"
+#include "hekate_ctcaer_4.5.h"
+// #include "atmo-0.8.1-master-bd76e73--fusee-primary.h"
 
 #define INTERMEZZO_SIZE 92
 const byte intermezzo[INTERMEZZO_SIZE] =
