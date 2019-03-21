@@ -21,7 +21,7 @@
 // For 4.5, this size is 125363.
 
 // #include "rajnx_ipl-0.7.5.1.h"
-#include "hekate_ctcaer_4.8.h"
+#include "hekate_ctcaer_4.9.1.h"
 // #include "atmo-0.8.1-master-bd76e73--fusee-primary.h"
 
 #define INTERMEZZO_SIZE 92
