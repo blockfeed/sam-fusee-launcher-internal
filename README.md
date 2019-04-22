@@ -4,6 +4,8 @@
 
 This is an implementation of the Fusée Gelée launcher for the very tiny [Nerdonic Exen Mini](https://nerdonic.com/products/exen/mini) board.
 
+As a matter of principal, assume that every commit is a new release. I will generally only update anything once I have tested it personally and it is confirmed to work on my own chip. Some of this involves one following the releases of hekate/atmosphere and understanding how this all works. No support is offered.
+
 Based on [sam fusee launcher](https://github.com/atlas44/sam-fusee-launcher) by atlas44 and the [fork by noemu](https://github.com/noemu/sam-fusee-launcher), as well as the [Quantum-cross fork](https://github.com/Quantum-cross/sam-fusee-launcher-internal).
 
 Build and tested with Arduino SDK.
