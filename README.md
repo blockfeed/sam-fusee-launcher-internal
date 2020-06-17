@@ -49,7 +49,7 @@ end of an extremely small capacitor.**
 
 # Software Installation
 
-Go through [exen mini setup guide](https://nerdonic.com/pages/products/exen/mini/downloads/exen_mini_setup.pdf) and install any necessary software.
+Go through [exen mini setup guide](https://nerdonic.com/pages/products/exen/mini/downloads/setup-guide-v2/exen_mini_setup_v2.pdf) and install any necessary software.
 
 Summary:
 * Download and install arduino IDE http://www.arduino.cc/en/Main/Software
