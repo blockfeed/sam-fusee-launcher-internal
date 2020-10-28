@@ -17,7 +17,7 @@
 //
 // Update FUSEE_BIN_SIZE to whatever the reported size is for the C file.
 
-#include "hekate_ctcaer_5.3.3.h"
+#include "hekate_ctcaer_5.3.4.h"
 
 #define INTERMEZZO_SIZE 92
 const byte intermezzo[INTERMEZZO_SIZE] =
